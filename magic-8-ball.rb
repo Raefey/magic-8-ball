@@ -28,22 +28,27 @@ def random_answer
 end
 
 def shake_ball
-  Array.new(1 + Random.rand(5)).map{ |e| "<shake>" }.join(" ") + "\n "
+  Array.new(1 + Random.rand(5)).map{ |e| "[shake]" }.join(" ")
 end
 
 def wait_for_user
   question = gets.chomp
   exit(0) if question == "q"
-  question
+end
+
+def prompt
+  "Ask the Magic 8-Ball a question! (q to quit)"
 end
 
 if __FILE__ == $0
-  puts "\nAsk the Magic 8-Ball a question! (q to quit)"
+  puts
+  puts prompt
   puts
 
   while (true)
     wait_for_user
-    puts shake_ball
-    puts random_answer
+    puts
+    puts shake_ball + " " + random_answer
+    puts
   end
 end
