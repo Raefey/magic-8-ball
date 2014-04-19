@@ -1,3 +1,4 @@
+# List pulled from https://en.wikipedia.org/wiki/Magic_8-Ball
 def answers
   [
     "It is certain",
